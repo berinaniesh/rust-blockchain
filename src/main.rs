@@ -28,7 +28,7 @@ fn main() {
             }
             Err(e) => {
             println!("Something went wrong, here is the error message:\n{}",e);
-            break;
+            return;
             }
         }
     }
