@@ -1,3 +1,7 @@
+extern crate serde_json;
+extern crate serde;
+extern crate serde_derive;
+
 use std::fs::File;
 use std::io::prelude::*;
 

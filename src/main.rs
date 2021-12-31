@@ -20,6 +20,7 @@ fn main() {
                     println!("Resetting the ledger");
                 }
                 else if input.trim() =="4" {
+                    println!("Good Bye!");
                     return;
                 }
                 else {
