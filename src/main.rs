@@ -8,30 +8,25 @@ fn main() {
     
     loop {
         let mut input = String::new();
-        match io::stdin().read_line(&mut input) {
-            Ok(_) => {
-                if input.trim() == "1" {
+        io::stdin().read_line(&mut input).unwrap();
+        match input.trim() {
+            "1" => {
                     println!("Printing Blockchain");
                 }
-                else if input.trim() == "2" {
+            "2" => {
                     println!("Starting mining");
                 }
-                else if input.trim() == "3" {
+            "3" => {
                     println!("Resetting the ledger");
                 }
-                else if input.trim() =="4" {
+            "4" => {
                     println!("Good Bye!");
                     return;
                 }
-                else {
+            _ => {
                     println!("Enter a valid option");
                 }
             }
-            Err(e) => {
-            println!("Something went wrong, here is the error message:\n{}",e);
-            return;
-            }
-        }
     }
 
 }
