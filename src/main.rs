@@ -1,5 +1,6 @@
 mod print_blockchain;
 mod mine;
+mod block;
 
 use std::io;
 
@@ -15,6 +16,7 @@ fn main() {
                 }
             "2" => {
                     println!("Starting mining");
+                    block::testing();
                 }
             "3" => {
                     println!("Resetting the ledger");
