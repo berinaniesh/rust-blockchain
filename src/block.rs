@@ -4,16 +4,19 @@ use sha2::{Sha256, Digest};
 
 #[derive(Hash)]
 struct Block {
-    block_number: u64,
-    block_data: String,
-    previous_block_hash: String,
+    id: u64,
+    data: String,
+    previous_hash: String,
+    timestamp: String,
+    nonce: u64,
+
 }
 impl Block {
     pub fn block_to_string(&self) -> String {
        let mut ans: String = String::new();
-       ans.push_str(self.block_number.to_string().as_str());
-       ans.push_str(self.block_data.as_str());
-       ans.push_str(self.previous_block_hash.as_str());
+       ans.push_str(self.id.to_string().as_str());
+       ans.push_str(self.data.as_str());
+       ans.push_str(self.previous_hash.as_str());
        ans
     }
 }
