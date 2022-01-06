@@ -1,6 +1,9 @@
 use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
 use sha2::{Sha256, Digest};
+use std::time::{Duration, SystemTime};
+
+pub const MINING_DIFFICULTY:u8 = 2; //two leading zeros. 
 
 #[derive(Hash)]
 struct Block {
@@ -31,9 +34,11 @@ fn calculate_hash<T: Hash>(t: &T) -> u64 {
 pub fn testing() {
 
     let block_1 = Block {
-        block_number: 1,
-        block_data: String::from("First block"),
-        previous_block_hash: String::from("0")
+        id: 1,
+        data: String::from("First block"),
+        timestamp: String::from("0"),
+        previous_hash: 0;
+
     };
 
     println!("{}", calculate_hash(&block_1))
